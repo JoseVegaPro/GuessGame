@@ -308,7 +308,7 @@
 
     .small-note {
       margin-top: 10px;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       text-align: center;
       color: #6b7280;
     }
@@ -385,7 +385,7 @@
     </div>
 
     <div class="small-note">
-      Tap “New Card” for new words. Tap “日本語” to toggle English / Japanese.
+      Made with ❤️ by Lito
     </div>
   </div>
 
@@ -559,9 +559,15 @@
       return pile.splice(idx, 1)[0];
     }
 
-    // One word from each category = 5-per-card structure
+    // One word from each category = 5-per-card structure, with random order each time
     function getRandomCardWords() {
-      return CATEGORY_KEYS.map(cat => drawFrom(cat));
+      const shuffled = [...CATEGORY_KEYS];
+      // Fisher-Yates shuffle
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled.map(cat => drawFrom(cat));
     }
 
     function randomAccentTheme() {
@@ -585,16 +591,12 @@
       const card = document.querySelector(".word-card");
       const list = document.getElementById("word-list");
       const newCardBtn = document.getElementById("new-card-btn");
-      const smallNote = document.querySelector(".small-note");
 
       // If we've already drawn the maximum unique cards, switch to restart mode
       if (cardsDrawn >= MAX_CARDS) {
         if (newCardBtn) {
           newCardBtn.textContent = "Restart Deck";
           newCardBtn.dataset.mode = "restart";
-        }
-        if (smallNote) {
-          smallNote.textContent = 'Deck finished. Tap "Restart Deck" to start over.';
         }
         return;
       }
@@ -671,9 +673,6 @@
           cardsDrawn = 0;
           newCardBtn.innerHTML = '<span class="emoji">✨</span>New Card';
           newCardBtn.dataset.mode = "draw";
-          if (smallNote) {
-            smallNote.textContent = 'Tap "New Card" for new words. Tap "日本語" to toggle English / Japanese.';
-          }
           renderNewCard();
         } else {
           renderNewCard();
