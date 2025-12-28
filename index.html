@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess Game – Word Cards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      font-family: "Baloo 2", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #111827;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #e0e7ff 0, #f9fafb 40%, #fef3c7 100%);
+    }
+
+    .app {
+      background: var(--card-bg);
+      padding: 24px 28px;
+      border-radius: 20px;
+      box-shadow:
+        0 20px 45px rgba(15, 23, 42, 0.18),
+        0 0 0 1px rgba(148, 163, 184, 0.35);
+      max-width: 460px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glow {
+      position: absolute;
+      inset: -40%;
+      opacity: 0.5;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(129, 140, 248, 0.4), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(253, 186, 116, 0.55), transparent 55%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 0 0 4px 0;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #6b7280;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .card-number {
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #1d1b4c;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-number span#card-number {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .dice {
+      font-size: 1rem;
+    }
+
+    .hint {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: right;
+    }
+
+    .word-card {
+      border-radius: 16px;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #fffbeb, #fefce8);
+      border: 1px solid rgba(251, 191, 36, 0.6);
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+      transform-origin: center;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow:
+        0 0 0 2px rgba(251, 191, 36, 0.65),
+        0 0 30px rgba(251, 191, 36, 0.6);
+      animation: glowPulse 2.2s ease-in-out infinite alternate;
+    }
+
+    .word-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.6), transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .word-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .word-card.pop {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 18px 35px rgba(245, 158, 11, 0.35);
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 10px 0;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: fadeUp 0.3s ease forwards;
+    }
+
+    li:nth-child(1) { animation-delay: 0.03s; }
+    li:nth-child(2) { animation-delay: 0.07s; }
+    li:nth-child(3) { animation-delay: 0.11s; }
+    li:nth-child(4) { animation-delay: 0.15s; }
+    li:nth-child(5) { animation-delay: 0.19s; }
+
+    .word-label {
+      background: #ffffff;
+      border-radius: 4px;
+      border-width: 3px;
+      border-style: solid;
+      padding: 4px 12px 6px;
+      min-width: 80%;
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.15);
+      transform: skewX(-2deg);
+    }
+
+    .word-number {
+      font-weight: 700;
+      font-size: 1.1rem;
+      min-width: 1.6em;
+      text-align: left;
+    }
+
+    .word-text {
+      text-transform: capitalize;
+      letter-spacing: 0.02em;
+      font-size: 1.5rem;
+      font-weight: 650;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Color bands matching 1–5 Just One style */
+    li.color-1 .word-label {
+      border-color: #1d9bf0;
+    }
+    li.color-1 .word-number {
+      color: #1d9bf0;
+    }
+
+    li.color-2 .word-label {
+      border-color: #22c55e;
+    }
+    li.color-2 .word-number {
+      color: #22c55e;
+    }
+
+    li.color-3 .word-label {
+      border-color: #f97373;
+    }
+    li.color-3 .word-number {
+      color: #f97373;
+    }
+
+    li.color-4 .word-label {
+      border-color: #f59e0b;
+    }
+    li.color-4 .word-number {
+      color: #f59e0b;
+    }
+
+    li.color-5 .word-label {
+      border-color: #eab308;
+    }
+    li.color-5 .word-number {
+      color: #eab308;
+    }
+
+    @keyframes glowPulse {
+      0% {
+        box-shadow:
+          0 0 0 1px rgba(251, 191, 36, 0.45),
+          0 0 18px rgba(251, 191, 36, 0.45);
+      }
+      100% {
+        box-shadow:
+          0 0 0 3px rgba(251, 191, 36, 0.85),
+          0 0 32px rgba(251, 191, 36, 0.85);
+      }
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    button {
+      flex: 1;
+      border-radius: 999px;
+      border: none;
+      padding: 10px 14px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+      transition:
+        transform 0.06s ease,
+        box-shadow 0.16s ease,
+        background 0.12s ease,
+        opacity 0.2s ease;
+      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.45);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    button.secondary {
+      background: #e5e7eb;
+      color: #111827;
+      box-shadow: 0 4px 10px rgba(148, 163, 184, 0.35);
+    }
+
+    button span.emoji {
+      font-size: 1.1rem;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(79, 70, 229, 0.5);
+    }
+
+    button.secondary:hover {
+      box-shadow: 0 8px 18px rgba(148, 163, 184, 0.5);
+    }
+
+    button:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 3px 8px rgba(79, 70, 229, 0.35);
+      background: #4338ca;
+    }
+
+    button.secondary:active {
+      background: #d1d5db;
+      box-shadow: 0 2px 5px rgba(148, 163, 184, 0.4);
+    }
+
+    .small-note {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      text-align: center;
+      color: #6b7280;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .pill {
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(249, 250, 251, 0.85);
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .app {
+        margin: 10px;
+        padding: 22px 14px;
+        border-radius: 18px;
+        max-width: 520px;
+      }
+      .word-card {
+        padding: 22px 18px;
+        min-height: 65vh;
+        display: flex;
+        align-items: center;
+      }
+      ol {
+        width: 100%;
+      }
+      li {
+        font-size: 1.3rem;
+        margin: 14px 0;
+      }
+      .word-text {
+        font-size: 1.8rem;
+      }
+      button {
+        padding: 12px 14px;
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="word-card">
+      <ol id="word-list">
+        <!-- Words go here -->
+      </ol>
+    </div>
+
+    <div class="controls">
+      <button id="new-card-btn">New Card</button>
+      <button id="toggle-lang-btn">日本語</button>
+    </div>
+
+    <div class="small-note">
+      Tap “New Card” for new words. Tap “日本語” to toggle English / Japanese.
+    </div>
+  </div>
+
+  <script>
+    // 🎴 Our custom categorized word bank
+    const WORD_BANK = {
+      // 1. Concrete objects (easy)
+      object: [
+        { en: "chair",     ja: "いす" },
+        { en: "table",     ja: "テーブル" },
+        { en: "umbrella",  ja: "かさ" },
+        { en: "mirror",    ja: "鏡" },
+        { en: "hammer",    ja: "ハンマー" },
+        { en: "piano",     ja: "ピアノ" },
+        { en: "bicycle",   ja: "自転車" },
+        { en: "camera",    ja: "カメラ" },
+        { en: "suitcase",  ja: "スーツケース" },
+        { en: "key",       ja: "かぎ" },
+        { en: "phone",     ja: "スマホ" },
+        { en: "clock",     ja: "時計" },
+        { en: "backpack",  ja: "リュック" },
+        { en: "helmet",    ja: "ヘルメット" },
+        { en: "sofa",      ja: "ソファ" },
+        { en: "ticket",    ja: "チケット" },
+        { en: "lamp",      ja: "ランプ" },
+        { en: "ring",      ja: "指輪" },
+        { en: "hat",       ja: "帽子" },
+        { en: "glasses",   ja: "メガネ" },
+        { en: "wallet",    ja: "財布" },
+        { en: "brush",     ja: "ブラシ" },
+        { en: "ball",      ja: "ボール" },
+        { en: "door",      ja: "ドア" },
+        { en: "ladder",    ja: "はしご" },
+      ],
+
+      // 2. Places & nature
+      place: [
+        { en: "Tokyo",     ja: "東京" },
+        { en: "Paris",     ja: "パリ" },
+        { en: "London",    ja: "ロンドン" },
+        { en: "desert",    ja: "砂漠" },
+        { en: "island",    ja: "島" },
+        { en: "forest",    ja: "森" },
+        { en: "beach",     ja: "ビーチ" },
+        { en: "mountain",  ja: "山" },
+        { en: "river",     ja: "川" },
+        { en: "park",      ja: "公園" },
+        { en: "airport",   ja: "空港" },
+        { en: "school",    ja: "学校" },
+        { en: "museum",    ja: "博物館" },
+        { en: "castle",    ja: "城" },
+        { en: "volcano",   ja: "火山" },
+        { en: "jungle",    ja: "ジャングル" },
+        { en: "village",   ja: "村" },
+        { en: "city",      ja: "町" },
+        { en: "station",   ja: "駅" },
+        { en: "hotel",     ja: "ホテル" },
+        { en: "bridge",    ja: "橋" },
+        { en: "cave",      ja: "洞窟" },
+        { en: "lake",      ja: "湖" },
+        { en: "temple",    ja: "寺" },
+        { en: "palace",    ja: "宮殿" },
+      ],
+
+      // 3. Pop culture & figures
+      figure: [
+        { en: "detective",        ja: "探偵" },
+        { en: "wizard",           ja: "魔法使い" },
+        { en: "superhero",        ja: "ヒーロー" },
+        { en: "pirate",           ja: "海賊" },
+        { en: "king",             ja: "王様" },
+        { en: "queen",            ja: "女王" },
+        { en: "samurai",          ja: "侍" },
+        { en: "ninja",            ja: "忍者" },
+        { en: "teacher",          ja: "先生" },
+        { en: "doctor",           ja: "医者" },
+        { en: "astronaut",        ja: "宇宙飛行士" },
+        { en: "singer",           ja: "歌手" },
+        { en: "actor",            ja: "俳優" },
+        { en: "chef",             ja: "シェフ" },
+        { en: "clown",            ja: "ピエロ" },
+        { en: "giant",            ja: "巨人" },
+        { en: "robot",            ja: "ロボット" },
+        { en: "alien",            ja: "エイリアン" },
+        { en: "dragon",           ja: "ドラゴン" },
+        { en: "princess",         ja: "お姫様" },
+        { en: "Hercules",         ja: "ヘラクレス" },
+        { en: "Dracula",          ja: "ドラキュラ" },
+        { en: "Sherlock Holmes",  ja: "シャーロック・ホームズ" },
+        { en: "Cinderella",       ja: "シンデレラ" },
+        { en: "Santa Claus",      ja: "サンタクロース" },
+      ],
+
+      // 4. Activities / verbs
+      action: [
+        { en: "running",   ja: "ランニング" },
+        { en: "dancing",   ja: "ダンス" },
+        { en: "swimming",  ja: "水泳" },
+        { en: "reading",   ja: "読書" },
+        { en: "cooking",   ja: "料理" },
+        { en: "driving",   ja: "運転" },
+        { en: "flying",    ja: "飛行" },
+        { en: "jumping",   ja: "ジャンプ" },
+        { en: "singing",   ja: "歌うこと" },
+        { en: "drawing",   ja: "お絵かき" },
+        { en: "shopping",  ja: "買い物" },
+        { en: "sleeping",  ja: "睡眠" },
+        { en: "laughing",  ja: "笑い" },
+        { en: "studying",  ja: "勉強" },
+        { en: "climbing",  ja: "クライミング" },
+        { en: "hiding",    ja: "かくれんぼ" },
+        { en: "racing",    ja: "レース" },
+        { en: "fishing",   ja: "釣り" },
+        { en: "painting",  ja: "絵画" },
+        { en: "writing",   ja: "執筆" },
+        { en: "texting",   ja: "メッセージ" },
+        { en: "surfing",   ja: "サーフィン" },
+        { en: "camping",   ja: "キャンプ" },
+        { en: "waltz",     ja: "ワルツ" },
+        { en: "praying",   ja: "お祈り" },
+      ],
+
+      // 5. Abstract / harder
+      abstract: [
+        { en: "freedom",    ja: "自由" },
+        { en: "luck",       ja: "運" },
+        { en: "silence",    ja: "静けさ" },
+        { en: "friendship", ja: "友情" },
+        { en: "hope",       ja: "希望" },
+        { en: "memory",     ja: "記憶" },
+        { en: "secret",     ja: "秘密" },
+        { en: "dream",      ja: "夢" },
+        { en: "justice",    ja: "正義" },
+        { en: "chaos",      ja: "混沌" },
+        { en: "fear",       ja: "恐怖" },
+        { en: "love",       ja: "愛" },
+        { en: "patience",   ja: "忍耐" },
+        { en: "peace",      ja: "平和" },
+        { en: "surprise",   ja: "驚き" },
+        { en: "honesty",    ja: "正直" },
+        { en: "courage",    ja: "勇気" },
+        { en: "revenge",    ja: "復讐" },
+        { en: "pride",      ja: "誇り" },
+        { en: "future",     ja: "未来" },
+        { en: "past",       ja: "過去" },
+        { en: "danger",     ja: "危険" },
+        { en: "magic",      ja: "魔法" },
+        { en: "mystery",    ja: "謎" },
+        { en: "joy",        ja: "喜び" },
+      ],
+    };
+
+    let showJapanese = false;
+
+    function pickRandom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // One word from each category = 5-per-card structure
+    function getRandomCardWords() {
+      return [
+        pickRandom(WORD_BANK.object),
+        pickRandom(WORD_BANK.place),
+        pickRandom(WORD_BANK.figure),
+        pickRandom(WORD_BANK.action),
+        pickRandom(WORD_BANK.abstract),
+      ];
+    }
+
+    function randomAccentTheme() {
+      const themes = [
+        { accent: "#4f46e5", accentSoft: "#eef2ff" },
+        { accent: "#db2777", accentSoft: "#fce7f3" },
+        { accent: "#16a34a", accentSoft: "#dcfce7" },
+        { accent: "#0ea5e9", accentSoft: "#e0f2fe" },
+        { accent: "#f97316", accentSoft: "#ffedd5" }
+      ];
+      return pickRandom(themes);
+    }
+
+    function applyTheme() {
+      const theme = randomAccentTheme();
+      document.documentElement.style.setProperty("--accent", theme.accent);
+      document.documentElement.style.setProperty("--accent-soft", theme.accentSoft);
+    }
+
+    function renderNewCard() {
+      const card = document.querySelector(".word-card");
+      const list = document.getElementById("word-list");
+
+      // Always change theme on a new card
+      applyTheme();
+
+      // Trigger a little "pop" animation
+      card.classList.remove("pop");
+      void card.offsetWidth; // Force reflow
+      card.classList.add("pop");
+
+      // Clear and add new words
+      list.innerHTML = "";
+      const words = getRandomCardWords();
+      words.forEach((word, index) => {
+        const li = document.createElement("li");
+        // Color band based on row number 1–5
+        li.classList.add(`color-${index + 1}`);
+
+        const label = document.createElement("div");
+        label.className = "word-label";
+
+        const numSpan = document.createElement("span");
+        numSpan.className = "word-number";
+        numSpan.textContent = index + 1;
+
+        const textSpan = document.createElement("span");
+        textSpan.className = "word-text";
+        textSpan.dataset.en = word.en;
+        textSpan.dataset.ja = word.ja || word.en;
+        textSpan.textContent = showJapanese ? (word.ja || word.en) : word.en;
+
+        label.appendChild(numSpan);
+        label.appendChild(textSpan);
+        li.appendChild(label);
+        list.appendChild(li);
+      });
+    }
+
+    function updateCardLanguage() {
+      const textSpans = document.querySelectorAll("#word-list .word-text");
+      textSpans.forEach(span => {
+        const en = span.dataset.en;
+        const ja = span.dataset.ja || en;
+        span.textContent = showJapanese ? ja : en;
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector(".app");
+
+      // Add a subtle glow background element
+      const glow = document.createElement("div");
+      glow.className = "glow";
+      container.prepend(glow);
+
+      const newCardBtn = document.getElementById("new-card-btn");
+      const toggleLangBtn = document.getElementById("toggle-lang-btn");
+
+      newCardBtn.innerHTML = '<span class="emoji">✨</span>New Card';
+      toggleLangBtn.innerHTML = '<span class="emoji">🇯🇵</span>日本語';
+
+      // Wire up behavior
+      newCardBtn.addEventListener("click", renderNewCard);
+      toggleLangBtn.addEventListener("click", () => {
+        showJapanese = !showJapanese;
+        toggleLangBtn.innerHTML = showJapanese
+          ? 'EN'
+          : '<span class="emoji">🇯🇵</span>日本語';
+        updateCardLanguage();
+      });
+
+      // Initial card
+      renderNewCard();
+    });
+  </script>
+</body>
+</html>
