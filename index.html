@@ -331,15 +331,20 @@
     }
 
     @media (max-width: 480px) {
+      body {
+        align-items: flex-start;
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
       .app {
-        margin: 10px;
-        padding: 22px 14px;
+        margin: 0 10px 16px;
+        padding: 24px 16px 18px;
         border-radius: 18px;
         max-width: 520px;
       }
       .word-card {
-        padding: 22px 18px;
-        min-height: 65vh;
+        padding: 26px 18px;
+        min-height: 72vh;
         display: flex;
         align-items: center;
       }
@@ -347,14 +352,14 @@
         width: 100%;
       }
       li {
-        font-size: 1.3rem;
-        margin: 14px 0;
+        font-size: 1.4rem;
+        margin: 16px 0;
       }
       .word-text {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
       button {
-        padding: 12px 14px;
+        padding: 13px 16px;
         font-size: 1.05rem;
       }
     }
@@ -527,21 +532,30 @@
       ],
     };
 
+    const CATEGORY_KEYS = ["object", "place", "figure", "action", "abstract"];
+    const MAX_CARDS = Math.min(...CATEGORY_KEYS.map(k => WORD_BANK[k].length));
+
+    let remainingBank = JSON.parse(JSON.stringify(WORD_BANK));
+    let cardsDrawn = 0;
     let showJapanese = false;
 
     function pickRandom(arr) {
       return arr[Math.floor(Math.random() * arr.length)];
     }
 
+    function drawFrom(category) {
+      const pile = remainingBank[category];
+      if (!pile || pile.length === 0) {
+        return null;
+      }
+      const idx = Math.floor(Math.random() * pile.length);
+      // Remove and return one word so it won't repeat
+      return pile.splice(idx, 1)[0];
+    }
+
     // One word from each category = 5-per-card structure
     function getRandomCardWords() {
-      return [
-        pickRandom(WORD_BANK.object),
-        pickRandom(WORD_BANK.place),
-        pickRandom(WORD_BANK.figure),
-        pickRandom(WORD_BANK.action),
-        pickRandom(WORD_BANK.abstract),
-      ];
+      return CATEGORY_KEYS.map(cat => drawFrom(cat));
     }
 
     function randomAccentTheme() {
@@ -564,6 +578,20 @@
     function renderNewCard() {
       const card = document.querySelector(".word-card");
       const list = document.getElementById("word-list");
+      const newCardBtn = document.getElementById("new-card-btn");
+      const smallNote = document.querySelector(".small-note");
+
+      // If we've already drawn the maximum unique cards, switch to restart mode
+      if (cardsDrawn >= MAX_CARDS) {
+        if (newCardBtn) {
+          newCardBtn.textContent = "Restart Deck";
+          newCardBtn.dataset.mode = "restart";
+        }
+        if (smallNote) {
+          smallNote.textContent = 'Deck finished. Tap "Restart Deck" to start over.';
+        }
+        return;
+      }
 
       // Always change theme on a new card
       applyTheme();
@@ -599,6 +627,9 @@
         li.appendChild(label);
         list.appendChild(li);
       });
+
+      // Count this card as drawn
+      cardsDrawn += 1;
     }
 
     function updateCardLanguage() {
@@ -620,12 +651,30 @@
 
       const newCardBtn = document.getElementById("new-card-btn");
       const toggleLangBtn = document.getElementById("toggle-lang-btn");
+      const smallNote = document.querySelector(".small-note");
 
       newCardBtn.innerHTML = '<span class="emoji">✨</span>New Card';
+      newCardBtn.dataset.mode = "draw";
       toggleLangBtn.innerHTML = '<span class="emoji">🇯🇵</span>日本語';
 
-      // Wire up behavior
-      newCardBtn.addEventListener("click", renderNewCard);
+      // Wire up behavior for the main button
+      newCardBtn.addEventListener("click", () => {
+        if (newCardBtn.dataset.mode === "restart") {
+          // Reset the deck and go back to normal mode
+          remainingBank = JSON.parse(JSON.stringify(WORD_BANK));
+          cardsDrawn = 0;
+          newCardBtn.innerHTML = '<span class="emoji">✨</span>New Card';
+          newCardBtn.dataset.mode = "draw";
+          if (smallNote) {
+            smallNote.textContent = 'Tap "New Card" for new words. Tap "日本語" to toggle English / Japanese.';
+          }
+          renderNewCard();
+        } else {
+          renderNewCard();
+        }
+      });
+
+      // Wire up behavior for language toggle
       toggleLangBtn.addEventListener("click", () => {
         showJapanese = !showJapanese;
         toggleLangBtn.innerHTML = showJapanese
