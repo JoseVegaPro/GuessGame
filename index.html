@@ -16,25 +16,19 @@
       --accent: #4f46e5;
       --accent-soft: #eef2ff;
       --card-bg: #ffffff;
-      --vh: 1vh;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-    }
-
     body {
       margin: 0;
-      min-height: calc(var(--vh, 1vh) * 100);
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #000000;
-      padding: 12px 0;
     }
 
     .app {
@@ -48,9 +42,6 @@
       width: 100%;
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
     }
 
     .glow {
@@ -82,7 +73,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
     .card-number {
@@ -112,7 +103,7 @@
       padding: 18px 20px;
       background: linear-gradient(135deg, #fffbeb, #fefce8);
       border: 1px solid rgba(251, 191, 36, 0.6);
-      margin-bottom: 8px;
+      margin-bottom: 18px;
       position: relative;
       overflow: hidden;
       transform-origin: center;
@@ -122,10 +113,7 @@
         0 0 30px rgba(251, 191, 36, 0.6);
       animation: glowPulse 2.2s ease-in-out infinite alternate;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 1 1 auto;
-      min-height: 0;
+      align-items: stretch;
     }
 
     .word-card::before {
@@ -259,8 +247,7 @@
     .controls {
       display: flex;
       gap: 8px;
-      margin-bottom: 0;
-      padding-top: 2px;
+      margin-bottom: 4px;
     }
 
     button {
@@ -316,7 +303,7 @@
     }
 
     .small-note {
-      margin-top: 6px;
+      margin-top: 10px;
       font-size: 0.9rem;
       text-align: center;
       color: #6b7280;
@@ -348,55 +335,34 @@
     @media (max-width: 900px) {
       body {
         align-items: flex-start;
-        padding-top: 8px;
-        padding-bottom: 12px;
+        padding-top: 12px;
+        padding-bottom: 20px;
       }
       .app {
-        margin: 0 10px 10px;
-        padding: 22px 16px 14px;
+        margin: 0 10px 16px;
+        padding: 26px 18px 20px;
         border-radius: 20px;
         max-width: 520px;
-        min-height: calc(var(--vh, 1vh) * 100 - 20px);
       }
       .word-card {
-        padding: 20px 14px;
-        min-height: auto;
+        padding: 28px 18px;
+        min-height: 78vh;
         display: flex;
         align-items: center;
-        flex: 1 1 auto;
       }
       ol {
         width: 100%;
       }
       li {
-        font-size: 1.25rem;
-        margin: 12px 0;
+        font-size: 1.5rem;
+        margin: 18px 0;
       }
       .word-text {
-        font-size: 2.1rem;
+        font-size: 2.6rem;
       }
       button {
-        padding: 12px 14px;
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .word-card {
-        padding: 16px 12px;
-      }
-      li {
-        margin: 10px 0;
-      }
-      .word-label {
-        padding: 4px 10px 6px;
-      }
-      .controls {
-        gap: 6px;
-      }
-      button {
-        padding: 11px 12px;
-        font-size: 0.98rem;
+        padding: 14px 18px;
+        font-size: 1.08rem;
       }
     }
   </style>
@@ -459,6 +425,29 @@
         { en: "peanuts",   ja: "ピーナッツ" },
         { en: "door",      ja: "ドア" },
         { en: "ladder",    ja: "はしご" },
+        { en: "laptop",     ja: "ノートパソコン" },
+        { en: "tablet",     ja: "タブレット" },
+        { en: "airpods",    ja: "イヤホン" },
+        { en: "controller", ja: "コントローラー" },
+        { en: "switch",     ja: "スイッチ" },
+        { en: "hoodie",     ja: "パーカー" },
+        { en: "sneakers",   ja: "スニーカー" },
+        { en: "ringlight",  ja: "リングライト" },
+        { en: "microphone", ja: "マイク" },
+        { en: "tripod",     ja: "三脚" },
+        { en: "keyboard",   ja: "キーボード" },
+        { en: "monitor",    ja: "モニター" },
+        { en: "headphones", ja: "ヘッドホン" },
+        { en: "sticker",    ja: "ステッカー" },
+        { en: "emoji",      ja: "絵文字" },
+        { en: "skateboard",  ja: "スケートボード" },
+        { en: "flip phone",  ja: "ガラケー" },
+        { en: "walkman",     ja: "ウォークマン" },
+        { en: "boombox",     ja: "ラジカセ" },
+        { en: "dvd",         ja: "DVD" },
+        { en: "tamagotchi",  ja: "たまごっち" },
+        { en: "cassette",    ja: "カセット" },
+        { en: "scrunchie",   ja: "シュシュ" },
       ],
 
       // 2. Places & nature
@@ -490,6 +479,25 @@
         { en: "palace",    ja: "宮殿" },
         { en: "Florida",   ja: "フロリダ" },
         { en: "Israel",    ja: "イスラエル" },
+        { en: "Shibuya",      ja: "渋谷" },
+        { en: "Shinjuku",     ja: "新宿" },
+        { en: "Harajuku",     ja: "原宿" },
+        { en: "Akihabara",    ja: "秋葉原" },
+        { en: "Osaka",        ja: "大阪" },
+        { en: "Kyoto",        ja: "京都" },
+        { en: "Hokkaido",     ja: "北海道" },
+        { en: "Okinawa",      ja: "沖縄" },
+        { en: "Shibuya Sky",  ja: "渋谷スカイ" },
+        { en: "karaoke",      ja: "カラオケ" },
+        { en: "arcade",       ja: "ゲームセンター" },
+        { en: "rooftop",      ja: "屋上" },
+        { en: "conbini",      ja: "コンビニ" },
+        { en: "mall",         ja: "ショッピングモール" },
+        { en: "cafeteria",    ja: "カフェテリア" },
+        { en: "basement",     ja: "地下室" },
+        { en: "playground",   ja: "遊び場" },
+        { en: "schoolyard",   ja: "校庭" },
+        { en: "salon",        ja: "サロン" },
       ],
 
       // 3. Pop culture & figures
@@ -523,6 +531,31 @@
         { en: "Tesla",            ja: "テスラ" },
         { en: "Trump",            ja: "トランプ" },
         { en: "Moses",            ja: "モーセ" },
+        { en: "influencer",     ja: "インフルエンサー" },
+        { en: "streamer",       ja: "配信者" },
+        { en: "YouTuber",       ja: "ユーチューバー" },
+        { en: "vtuber",         ja: "VTuber" },
+        { en: "idol",           ja: "アイドル" },
+        { en: "otaku",          ja: "オタク" },
+        { en: "senpai",         ja: "先輩" },
+        { en: "gamer",          ja: "ゲーマー" },
+        { en: "cosplayer",      ja: "コスプレイヤー" },
+        { en: "barista",        ja: "バリスタ" },
+        { en: "dancer",         ja: "ダンサー" },
+        { en: "Zendaya",        ja: "ゼンデイヤ" },
+        { en: "Tom Holland",    ja: "トム・ホランド" },
+        { en: "Emma Stone",     ja: "エマ・ストーン" },
+        { en: "Ryan Gosling",   ja: "ライアン・ゴズリング" },
+        { en: "Harry Potter",         ja: "ハリー・ポッター" },
+        { en: "Britney Spears",       ja: "ブリトニー・スピアーズ" },
+        { en: "Backstreet Boys",      ja: "バックストリート・ボーイズ" },
+        { en: "Avril Lavigne",        ja: "アヴリル・ラヴィーン" },
+        { en: "Linkin Park",          ja: "リンキン・パーク" },
+        { en: "Mario Kart",           ja: "マリオカート" },
+        { en: "SpongeBob SquarePants", ja: "スポンジ・ボブ" },
+        { en: "Ash Ketchum",          ja: "サトシ" },
+        { en: "Lara Croft",           ja: "ララ・クロフト" },
+        { en: "Barney",               ja: "バーニー" },
       ],
 
       // 4. Activities / verbs
@@ -554,6 +587,23 @@
         { en: "praying",   ja: "お祈り" },
         { en: "whispering",   ja: "ささやく" },
         { en: "traveling",    ja: "旅行する" },
+        { en: "streaming",   ja: "配信する" },
+        { en: "posting",     ja: "投稿する" },
+        { en: "scrolling",   ja: "スクロールする" },
+        { en: "swiping",     ja: "スワイプする" },
+        { en: "sharing",     ja: "シェアする" },
+        { en: "liking",      ja: "いいねする" },
+        { en: "commenting",  ja: "コメントする" },
+        { en: "binging",     ja: "一気見する" },
+        { en: "vlogging",    ja: "Vログする" },
+        { en: "editing",     ja: "編集する" },
+        { en: "chilling",    ja: "チルする" },
+        { en: "flexing",     ja: "自慢する" },
+        { en: "blogging",    ja: "ブログを書く" },
+        { en: "downloading", ja: "ダウンロードする" },
+        { en: "raving",      ja: "レイヴする" },
+        { en: "skating",     ja: "スケートする" },
+        { en: "messaging",   ja: "メッセージする" },
       ],
 
       // 5. Abstract / harder
@@ -585,6 +635,22 @@
         { en: "joy",        ja: "喜び" },
         { en: "faith",        ja: "信仰" },
         { en: "imagination",  ja: "想像力" },
+        { en: "vibes",       ja: "雰囲気" },
+        { en: "aesthetic",   ja: "美学" },
+        { en: "mood",        ja: "ムード" },
+        { en: "clout",       ja: "影響力" },
+        { en: "fomo",        ja: "FOMO" },
+        { en: "drama",       ja: "ドラマ" },
+        { en: "energy",      ja: "エネルギー" },
+        { en: "cringe",      ja: "イタさ" },
+        { en: "wholesome",   ja: "ほっこり感" },
+        { en: "lowkey",      ja: "ひそかな気持ち" },
+        { en: "highkey",     ja: "本音" },
+        { en: "nostalgia",   ja: "ノスタルジア" },
+        { en: "angst",       ja: "不安" },
+        { en: "hype",        ja: "盛り上がり" },
+        { en: "boredom",     ja: "退屈" },
+        { en: "childhood",   ja: "子供時代" },
       ],
     };
 
@@ -755,15 +821,6 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Fix 100vh issues on mobile Safari (URL bar)
-      const setViewportHeight = () => {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
-      };
-      setViewportHeight();
-      window.addEventListener("resize", setViewportHeight);
-      window.addEventListener("orientationchange", setViewportHeight);
-
       const container = document.querySelector(".app");
 
       // Add a subtle glow background element
