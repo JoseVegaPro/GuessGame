@@ -16,19 +16,25 @@
       --accent: #4f46e5;
       --accent-soft: #eef2ff;
       --card-bg: #ffffff;
+      --vh: 1vh;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
+      min-height: calc(var(--vh, 1vh) * 100);
       display: flex;
       align-items: center;
       justify-content: center;
       background: #000000;
+      padding: 12px 0;
     }
 
     .app {
@@ -42,6 +48,9 @@
       width: 100%;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .glow {
@@ -73,7 +82,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .card-number {
@@ -103,7 +112,7 @@
       padding: 18px 20px;
       background: linear-gradient(135deg, #fffbeb, #fefce8);
       border: 1px solid rgba(251, 191, 36, 0.6);
-      margin-bottom: 18px;
+      margin-bottom: 8px;
       position: relative;
       overflow: hidden;
       transform-origin: center;
@@ -113,7 +122,10 @@
         0 0 30px rgba(251, 191, 36, 0.6);
       animation: glowPulse 2.2s ease-in-out infinite alternate;
       display: flex;
-      align-items: stretch;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 auto;
+      min-height: 0;
     }
 
     .word-card::before {
@@ -247,7 +259,8 @@
     .controls {
       display: flex;
       gap: 8px;
-      margin-bottom: 4px;
+      margin-bottom: 0;
+      padding-top: 2px;
     }
 
     button {
@@ -303,7 +316,7 @@
     }
 
     .small-note {
-      margin-top: 10px;
+      margin-top: 6px;
       font-size: 0.9rem;
       text-align: center;
       color: #6b7280;
@@ -335,34 +348,55 @@
     @media (max-width: 900px) {
       body {
         align-items: flex-start;
-        padding-top: 12px;
-        padding-bottom: 20px;
+        padding-top: 8px;
+        padding-bottom: 12px;
       }
       .app {
-        margin: 0 10px 16px;
-        padding: 26px 18px 20px;
+        margin: 0 10px 10px;
+        padding: 22px 16px 14px;
         border-radius: 20px;
         max-width: 520px;
+        min-height: calc(var(--vh, 1vh) * 100 - 20px);
       }
       .word-card {
-        padding: 28px 18px;
-        min-height: 78vh;
+        padding: 20px 14px;
+        min-height: auto;
         display: flex;
         align-items: center;
+        flex: 1 1 auto;
       }
       ol {
         width: 100%;
       }
       li {
-        font-size: 1.5rem;
-        margin: 18px 0;
+        font-size: 1.25rem;
+        margin: 12px 0;
       }
       .word-text {
-        font-size: 2.6rem;
+        font-size: 2.1rem;
       }
       button {
-        padding: 14px 18px;
-        font-size: 1.08rem;
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .word-card {
+        padding: 16px 12px;
+      }
+      li {
+        margin: 10px 0;
+      }
+      .word-label {
+        padding: 4px 10px 6px;
+      }
+      .controls {
+        gap: 6px;
+      }
+      button {
+        padding: 11px 12px;
+        font-size: 0.98rem;
       }
     }
   </style>
@@ -721,6 +755,15 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      // Fix 100vh issues on mobile Safari (URL bar)
+      const setViewportHeight = () => {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      };
+      setViewportHeight();
+      window.addEventListener("resize", setViewportHeight);
+      window.addEventListener("orientationchange", setViewportHeight);
+
       const container = document.querySelector(".app");
 
       // Add a subtle glow background element
