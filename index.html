@@ -96,6 +96,70 @@
       font-size: 0.8rem;
       color: #9ca3af;
       text-align: right;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-end;
+    }
+
+    .seed-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .seed-label {
+      color: #9ca3af;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .seed-input {
+      width: 128px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(249, 250, 251, 0.9);
+      color: #111827;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      outline: none;
+      text-align: left;
+    }
+
+    .seed-input:focus {
+      border-color: rgba(79, 70, 229, 0.9);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
+    }
+
+    .seed-apply {
+      border-radius: 999px;
+      border: none;
+      padding: 7px 10px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 6px 14px rgba(79, 70, 229, 0.35);
+      transition: transform 0.06s ease, box-shadow 0.16s ease, background 0.12s ease;
+      line-height: 1;
+    }
+
+    .seed-apply:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(79, 70, 229, 0.45);
+    }
+
+    .seed-apply:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 3px 8px rgba(79, 70, 229, 0.28);
+      background: #4338ca;
+    }
+
+    .seed-display {
+      color: #9ca3af;
+      font-size: 0.78rem;
     }
 
     .word-card {
@@ -374,7 +438,14 @@
       <div class="card-number">
         Card <span id="card-number">1</span>/<span id="card-total">--</span>
       </div>
-      <div class="hint">Seed: <span id="seed-display"></span></div>
+      <div class="hint">
+        <div class="seed-row">
+          <span class="seed-label">Seed:</span>
+          <input id="seed-input" class="seed-input" type="text" inputmode="text" autocomplete="off" spellcheck="false" maxlength="32" placeholder="e.g. k9p2ab" />
+          <button id="apply-seed-btn" class="seed-apply" type="button">Apply</button>
+        </div>
+        <div class="seed-display">Current: <span id="seed-display"></span></div>
+      </div>
     </div>
 
     <div class="word-card">
@@ -821,6 +892,23 @@
       updateSeedInUrl(seedString);
     }
 
+    function setSeedFromInput(raw) {
+      const cleaned = (raw || "").trim().slice(0, 32);
+      if (!cleaned) return;
+
+      seedString = cleaned;
+      updateSeedInUrl(seedString);
+
+      // Rebuild the deterministic deck and reset to the first card
+      buildDeck();
+      renderCard();
+
+      const seedInput = document.getElementById("seed-input");
+      if (seedInput) {
+        seedInput.value = seedString;
+      }
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       const container = document.querySelector(".app");
 
@@ -831,6 +919,8 @@
 
       const newCardBtn = document.getElementById("new-card-btn");
       const toggleLangBtn = document.getElementById("toggle-lang-btn");
+      const seedInput = document.getElementById("seed-input");
+      const applySeedBtn = document.getElementById("apply-seed-btn");
 
       newCardBtn.innerHTML = '<span class="emoji">✨</span>New Card';
       newCardBtn.dataset.mode = "draw";
@@ -839,6 +929,10 @@
       initSeed();
       buildDeck();
       renderCard();
+
+      if (seedInput) {
+        seedInput.value = seedString;
+      }
 
       // Wire up behavior for the main button
       newCardBtn.addEventListener("click", () => {
@@ -865,6 +959,21 @@
           : '<span class="emoji">🇯🇵</span>日本語';
         updateCardLanguage();
       });
+
+      if (applySeedBtn) {
+        applySeedBtn.addEventListener("click", () => {
+          if (seedInput) setSeedFromInput(seedInput.value);
+        });
+      }
+
+      if (seedInput) {
+        seedInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            setSeedFromInput(seedInput.value);
+          }
+        });
+      }
     });
   </script>
 </body>
