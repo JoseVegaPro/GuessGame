@@ -399,6 +399,106 @@
     {
       "en": "toy robot",
       "ja": "おもちゃのロボット"
+    },
+    {
+      "en": "broom",
+      "ja": "ほうき"
+    },
+    {
+      "en": "mop",
+      "ja": "モップ"
+    },
+    {
+      "en": "bucket",
+      "ja": "バケツ"
+    },
+    {
+      "en": "sponge",
+      "ja": "スポンジ"
+    },
+    {
+      "en": "frying pan",
+      "ja": "フライパン"
+    },
+    {
+      "en": "spatula",
+      "ja": "フライ返し"
+    },
+    {
+      "en": "whisk",
+      "ja": "泡立て器"
+    },
+    {
+      "en": "measuring cup",
+      "ja": "計量カップ"
+    },
+    {
+      "en": "thermometer",
+      "ja": "体温計"
+    },
+    {
+      "en": "binoculars",
+      "ja": "双眼鏡"
+    },
+    {
+      "en": "compass",
+      "ja": "コンパス"
+    },
+    {
+      "en": "calendar",
+      "ja": "カレンダー"
+    },
+    {
+      "en": "passport",
+      "ja": "パスポート"
+    },
+    {
+      "en": "tissue box",
+      "ja": "ティッシュ箱"
+    },
+    {
+      "en": "rubber duck",
+      "ja": "アヒルのおもちゃ"
+    },
+    {
+      "en": "yo-yo",
+      "ja": "ヨーヨー"
+    },
+    {
+      "en": "kite",
+      "ja": "たこ"
+    },
+    {
+      "en": "board game",
+      "ja": "ボードゲーム"
+    },
+    {
+      "en": "jigsaw puzzle",
+      "ja": "ジグソーパズル"
+    },
+    {
+      "en": "crayon",
+      "ja": "クレヨン"
+    },
+    {
+      "en": "paintbrush",
+      "ja": "絵筆"
+    },
+    {
+      "en": "watering can",
+      "ja": "じょうろ"
+    },
+    {
+      "en": "toolbox",
+      "ja": "工具箱"
+    },
+    {
+      "en": "screwdriver",
+      "ja": "ドライバー"
+    },
+    {
+      "en": "wrench",
+      "ja": "レンチ"
     }
   ],
   "place": [
@@ -511,56 +611,56 @@
       "ja": "イスラエル"
     },
     {
-      "en": "Shibuya",
-      "ja": "渋谷"
+      "en": "New York",
+      "ja": "ニューヨーク"
     },
     {
-      "en": "Shinjuku",
-      "ja": "新宿"
+      "en": "Los Angeles",
+      "ja": "ロサンゼルス"
     },
     {
-      "en": "Harajuku",
-      "ja": "原宿"
+      "en": "San Francisco",
+      "ja": "サンフランシスコ"
     },
     {
-      "en": "Akihabara",
-      "ja": "秋葉原"
+      "en": "Mexico City",
+      "ja": "メキシコシティ"
     },
     {
-      "en": "Osaka",
-      "ja": "大阪"
+      "en": "Rio de Janeiro",
+      "ja": "リオデジャネイロ"
     },
     {
-      "en": "Kyoto",
-      "ja": "京都"
+      "en": "Toronto",
+      "ja": "トロント"
     },
     {
-      "en": "Hokkaido",
-      "ja": "北海道"
+      "en": "Vancouver",
+      "ja": "バンクーバー"
     },
     {
-      "en": "Okinawa",
-      "ja": "沖縄"
+      "en": "Rome",
+      "ja": "ローマ"
     },
     {
-      "en": "Shibuya Sky",
-      "ja": "渋谷スカイ"
+      "en": "Berlin",
+      "ja": "ベルリン"
     },
     {
-      "en": "karaoke",
-      "ja": "カラオケ"
+      "en": "Seoul",
+      "ja": "ソウル"
     },
     {
-      "en": "arcade",
-      "ja": "ゲームセンター"
+      "en": "Bangkok",
+      "ja": "バンコク"
+    },
+    {
+      "en": "Sydney",
+      "ja": "シドニー"
     },
     {
       "en": "rooftop",
       "ja": "屋上"
-    },
-    {
-      "en": "conbini",
-      "ja": "コンビニ"
     },
     {
       "en": "mall",
@@ -801,6 +901,106 @@
     {
       "en": "planetarium",
       "ja": "プラネタリウム"
+    },
+    {
+      "en": "Disney World",
+      "ja": "ディズニーワールド"
+    },
+    {
+      "en": "Orlando",
+      "ja": "オーランド"
+    },
+    {
+      "en": "Eiffel Tower",
+      "ja": "エッフェル塔"
+    },
+    {
+      "en": "Great Wall of China",
+      "ja": "万里の長城"
+    },
+    {
+      "en": "Taj Mahal",
+      "ja": "タージ・マハル"
+    },
+    {
+      "en": "Grand Canyon",
+      "ja": "グランドキャニオン"
+    },
+    {
+      "en": "Niagara Falls",
+      "ja": "ナイアガラの滝"
+    },
+    {
+      "en": "Times Square",
+      "ja": "タイムズスクエア"
+    },
+    {
+      "en": "Central Park",
+      "ja": "セントラルパーク"
+    },
+    {
+      "en": "Colosseum",
+      "ja": "コロッセオ"
+    },
+    {
+      "en": "Louvre Museum",
+      "ja": "ルーヴル美術館"
+    },
+    {
+      "en": "Big Ben",
+      "ja": "ビッグ・ベン"
+    },
+    {
+      "en": "Golden Gate Bridge",
+      "ja": "ゴールデンゲートブリッジ"
+    },
+    {
+      "en": "Mount Fuji",
+      "ja": "富士山"
+    },
+    {
+      "en": "Pyramids of Giza",
+      "ja": "ギザのピラミッド"
+    },
+    {
+      "en": "Sagrada Familia",
+      "ja": "サグラダ・ファミリア"
+    },
+    {
+      "en": "Machu Picchu",
+      "ja": "マチュピチュ"
+    },
+    {
+      "en": "Petra",
+      "ja": "ペトラ"
+    },
+    {
+      "en": "Santorini",
+      "ja": "サントリーニ"
+    },
+    {
+      "en": "Bora Bora",
+      "ja": "ボラボラ島"
+    },
+    {
+      "en": "Venice",
+      "ja": "ヴェネツィア"
+    },
+    {
+      "en": "Dubai",
+      "ja": "ドバイ"
+    },
+    {
+      "en": "Singapore",
+      "ja": "シンガポール"
+    },
+    {
+      "en": "Cape Town",
+      "ja": "ケープタウン"
+    },
+    {
+      "en": "Mount Everest",
+      "ja": "エベレスト"
     }
   ],
   "figure": [
@@ -1203,6 +1403,106 @@
     {
       "en": "potter",
       "ja": "陶芸家"
+    },
+    {
+      "en": "paramedic",
+      "ja": "救急救命士"
+    },
+    {
+      "en": "park ranger",
+      "ja": "レンジャー"
+    },
+    {
+      "en": "florist",
+      "ja": "花屋"
+    },
+    {
+      "en": "meteorologist",
+      "ja": "気象予報士"
+    },
+    {
+      "en": "astronomer",
+      "ja": "天文学者"
+    },
+    {
+      "en": "geologist",
+      "ja": "地質学者"
+    },
+    {
+      "en": "robotics engineer",
+      "ja": "ロボット工学エンジニア"
+    },
+    {
+      "en": "game developer",
+      "ja": "ゲーム開発者"
+    },
+    {
+      "en": "researcher",
+      "ja": "研究者"
+    },
+    {
+      "en": "inventor",
+      "ja": "発明家"
+    },
+    {
+      "en": "sculptor",
+      "ja": "彫刻家"
+    },
+    {
+      "en": "calligrapher",
+      "ja": "書道家"
+    },
+    {
+      "en": "origami artist",
+      "ja": "折り紙作家"
+    },
+    {
+      "en": "cartoonist",
+      "ja": "漫画家"
+    },
+    {
+      "en": "voice actor",
+      "ja": "声優"
+    },
+    {
+      "en": "game show host",
+      "ja": "司会者"
+    },
+    {
+      "en": "tourist",
+      "ja": "観光客"
+    },
+    {
+      "en": "mountain climber",
+      "ja": "登山家"
+    },
+    {
+      "en": "lighthouse keeper",
+      "ja": "灯台守"
+    },
+    {
+      "en": "beekeeper",
+      "ja": "養蜂家"
+    },
+    {
+      "en": "ice cream seller",
+      "ja": "アイスクリーム屋"
+    },
+    {
+      "en": "pizza delivery person",
+      "ja": "ピザ配達員"
+    },
+    {
+      "en": "storyteller",
+      "ja": "語り手"
+    },
+    {
+      "en": "choreographer",
+      "ja": "振付師"
+    },
+    {
+      "en": "luthier",
+      "ja": "楽器職人"
     }
   ],
   "action": [
@@ -1605,6 +1905,106 @@
     {
       "en": "rollerblading",
       "ja": "ローラーブレードをする"
+    },
+    {
+      "en": "giggling",
+      "ja": "くすくす笑う"
+    },
+    {
+      "en": "sighing",
+      "ja": "ため息をつく"
+    },
+    {
+      "en": "snoring",
+      "ja": "いびきをかく"
+    },
+    {
+      "en": "daydreaming",
+      "ja": "ぼーっとする"
+    },
+    {
+      "en": "knitting",
+      "ja": "編み物をする"
+    },
+    {
+      "en": "sewing",
+      "ja": "縫い物をする"
+    },
+    {
+      "en": "juggling",
+      "ja": "ジャグリングする"
+    },
+    {
+      "en": "hula hooping",
+      "ja": "フラフープする"
+    },
+    {
+      "en": "moonwalking",
+      "ja": "ムーンウォークする"
+    },
+    {
+      "en": "doodling",
+      "ja": "落書きする"
+    },
+    {
+      "en": "gardening",
+      "ja": "ガーデニングする"
+    },
+    {
+      "en": "bouncing",
+      "ja": "ぴょんぴょん跳ねる"
+    },
+    {
+      "en": "sneaking",
+      "ja": "こっそり歩く"
+    },
+    {
+      "en": "saluting",
+      "ja": "敬礼する"
+    },
+    {
+      "en": "giving a thumbs-up",
+      "ja": "親指を立てる"
+    },
+    {
+      "en": "blowing a kiss",
+      "ja": "投げキッスする"
+    },
+    {
+      "en": "toasting",
+      "ja": "乾杯する"
+    },
+    {
+      "en": "pouring",
+      "ja": "注ぐ"
+    },
+    {
+      "en": "sprinkling",
+      "ja": "ふりかける"
+    },
+    {
+      "en": "grilling",
+      "ja": "焼く"
+    },
+    {
+      "en": "toasting bread",
+      "ja": "パンを焼く"
+    },
+    {
+      "en": "blending",
+      "ja": "ミキサーにかける"
+    },
+    {
+      "en": "puzzling",
+      "ja": "パズルをする"
+    },
+    {
+      "en": "making origami",
+      "ja": "折り紙を折る"
+    },
+    {
+      "en": "snowball fighting",
+      "ja": "雪合戦する"
     }
   ],
   "abstract": [
@@ -2007,6 +2407,106 @@
     {
       "en": "simplicity",
       "ja": "シンプルさ"
+    },
+    {
+      "en": "humor",
+      "ja": "ユーモア"
+    },
+    {
+      "en": "charm",
+      "ja": "魅力"
+    },
+    {
+      "en": "resilience",
+      "ja": "回復力"
+    },
+    {
+      "en": "caution",
+      "ja": "用心"
+    },
+    {
+      "en": "ambition",
+      "ja": "向上心"
+    },
+    {
+      "en": "impatience",
+      "ja": "せっかち"
+    },
+    {
+      "en": "relaxation",
+      "ja": "リラックス"
+    },
+    {
+      "en": "exhaustion",
+      "ja": "疲労"
+    },
+    {
+      "en": "comfort zone",
+      "ja": "コンフォートゾーン"
+    },
+    {
+      "en": "connection",
+      "ja": "つながり"
+    },
+    {
+      "en": "inclusion",
+      "ja": "包容"
+    },
+    {
+      "en": "attention",
+      "ja": "注意"
+    },
+    {
+      "en": "mindset",
+      "ja": "考え方"
+    },
+    {
+      "en": "self-esteem",
+      "ja": "自己肯定感"
+    },
+    {
+      "en": "leadership",
+      "ja": "リーダーシップ"
+    },
+    {
+      "en": "gratification",
+      "ja": "達成感"
+    },
+    {
+      "en": "peace of mind",
+      "ja": "安心"
+    },
+    {
+      "en": "spark",
+      "ja": "ひらめき"
+    },
+    {
+      "en": "confidence boost",
+      "ja": "自信がつく"
+    },
+    {
+      "en": "good luck",
+      "ja": "幸運"
+    },
+    {
+      "en": "mischief",
+      "ja": "いたずら心"
+    },
+    {
+      "en": "contentment",
+      "ja": "満ち足りた気持ち"
+    },
+    {
+      "en": "nostalgic",
+      "ja": "懐かしさ"
+    },
+    {
+      "en": "fair play",
+      "ja": "フェアプレー"
+    },
+    {
+      "en": "complexity",
+      "ja": "複雑さ"
     }
   ]
 }
