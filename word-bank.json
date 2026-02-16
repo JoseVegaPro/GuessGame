@@ -1,0 +1,964 @@
+{
+  "object": [
+    {
+      "en": "chair",
+      "ja": "いす"
+    },
+    {
+      "en": "table",
+      "ja": "テーブル"
+    },
+    {
+      "en": "umbrella",
+      "ja": "かさ"
+    },
+    {
+      "en": "mirror",
+      "ja": "鏡"
+    },
+    {
+      "en": "hammer",
+      "ja": "ハンマー"
+    },
+    {
+      "en": "piano",
+      "ja": "ピアノ"
+    },
+    {
+      "en": "bicycle",
+      "ja": "自転車"
+    },
+    {
+      "en": "camera",
+      "ja": "カメラ"
+    },
+    {
+      "en": "suitcase",
+      "ja": "スーツケース"
+    },
+    {
+      "en": "key",
+      "ja": "かぎ"
+    },
+    {
+      "en": "phone",
+      "ja": "スマホ"
+    },
+    {
+      "en": "clock",
+      "ja": "時計"
+    },
+    {
+      "en": "backpack",
+      "ja": "リュック"
+    },
+    {
+      "en": "helmet",
+      "ja": "ヘルメット"
+    },
+    {
+      "en": "sofa",
+      "ja": "ソファ"
+    },
+    {
+      "en": "ticket",
+      "ja": "チケット"
+    },
+    {
+      "en": "lamp",
+      "ja": "ランプ"
+    },
+    {
+      "en": "ring",
+      "ja": "指輪"
+    },
+    {
+      "en": "hat",
+      "ja": "帽子"
+    },
+    {
+      "en": "glasses",
+      "ja": "メガネ"
+    },
+    {
+      "en": "wallet",
+      "ja": "財布"
+    },
+    {
+      "en": "brush",
+      "ja": "ブラシ"
+    },
+    {
+      "en": "ball",
+      "ja": "ボール"
+    },
+    {
+      "en": "Porsche",
+      "ja": "ポルシェ"
+    },
+    {
+      "en": "purse",
+      "ja": "ハンドバッグ"
+    },
+    {
+      "en": "peanuts",
+      "ja": "ピーナッツ"
+    },
+    {
+      "en": "door",
+      "ja": "ドア"
+    },
+    {
+      "en": "ladder",
+      "ja": "はしご"
+    },
+    {
+      "en": "laptop",
+      "ja": "ノートパソコン"
+    },
+    {
+      "en": "tablet",
+      "ja": "タブレット"
+    },
+    {
+      "en": "airpods",
+      "ja": "イヤホン"
+    },
+    {
+      "en": "controller",
+      "ja": "コントローラー"
+    },
+    {
+      "en": "switch",
+      "ja": "スイッチ"
+    },
+    {
+      "en": "hoodie",
+      "ja": "パーカー"
+    },
+    {
+      "en": "sneakers",
+      "ja": "スニーカー"
+    },
+    {
+      "en": "ringlight",
+      "ja": "リングライト"
+    },
+    {
+      "en": "microphone",
+      "ja": "マイク"
+    },
+    {
+      "en": "tripod",
+      "ja": "三脚"
+    },
+    {
+      "en": "keyboard",
+      "ja": "キーボード"
+    },
+    {
+      "en": "monitor",
+      "ja": "モニター"
+    },
+    {
+      "en": "headphones",
+      "ja": "ヘッドホン"
+    },
+    {
+      "en": "sticker",
+      "ja": "ステッカー"
+    },
+    {
+      "en": "emoji",
+      "ja": "絵文字"
+    },
+    {
+      "en": "skateboard",
+      "ja": "スケートボード"
+    },
+    {
+      "en": "flip phone",
+      "ja": "ガラケー"
+    },
+    {
+      "en": "walkman",
+      "ja": "ウォークマン"
+    },
+    {
+      "en": "boombox",
+      "ja": "ラジカセ"
+    },
+    {
+      "en": "dvd",
+      "ja": "DVD"
+    },
+    {
+      "en": "tamagotchi",
+      "ja": "たまごっち"
+    },
+    {
+      "en": "cassette",
+      "ja": "カセット"
+    },
+    {
+      "en": "scrunchie",
+      "ja": "シュシュ"
+    }
+  ],
+  "place": [
+    {
+      "en": "Tokyo",
+      "ja": "東京"
+    },
+    {
+      "en": "Paris",
+      "ja": "パリ"
+    },
+    {
+      "en": "London",
+      "ja": "ロンドン"
+    },
+    {
+      "en": "desert",
+      "ja": "砂漠"
+    },
+    {
+      "en": "island",
+      "ja": "島"
+    },
+    {
+      "en": "forest",
+      "ja": "森"
+    },
+    {
+      "en": "beach",
+      "ja": "ビーチ"
+    },
+    {
+      "en": "mountain",
+      "ja": "山"
+    },
+    {
+      "en": "river",
+      "ja": "川"
+    },
+    {
+      "en": "park",
+      "ja": "公園"
+    },
+    {
+      "en": "airport",
+      "ja": "空港"
+    },
+    {
+      "en": "school",
+      "ja": "学校"
+    },
+    {
+      "en": "museum",
+      "ja": "博物館"
+    },
+    {
+      "en": "castle",
+      "ja": "城"
+    },
+    {
+      "en": "volcano",
+      "ja": "火山"
+    },
+    {
+      "en": "jungle",
+      "ja": "ジャングル"
+    },
+    {
+      "en": "village",
+      "ja": "村"
+    },
+    {
+      "en": "city",
+      "ja": "町"
+    },
+    {
+      "en": "station",
+      "ja": "駅"
+    },
+    {
+      "en": "hotel",
+      "ja": "ホテル"
+    },
+    {
+      "en": "bridge",
+      "ja": "橋"
+    },
+    {
+      "en": "cave",
+      "ja": "洞窟"
+    },
+    {
+      "en": "lake",
+      "ja": "湖"
+    },
+    {
+      "en": "temple",
+      "ja": "寺"
+    },
+    {
+      "en": "palace",
+      "ja": "宮殿"
+    },
+    {
+      "en": "Florida",
+      "ja": "フロリダ"
+    },
+    {
+      "en": "Israel",
+      "ja": "イスラエル"
+    },
+    {
+      "en": "Shibuya",
+      "ja": "渋谷"
+    },
+    {
+      "en": "Shinjuku",
+      "ja": "新宿"
+    },
+    {
+      "en": "Harajuku",
+      "ja": "原宿"
+    },
+    {
+      "en": "Akihabara",
+      "ja": "秋葉原"
+    },
+    {
+      "en": "Osaka",
+      "ja": "大阪"
+    },
+    {
+      "en": "Kyoto",
+      "ja": "京都"
+    },
+    {
+      "en": "Hokkaido",
+      "ja": "北海道"
+    },
+    {
+      "en": "Okinawa",
+      "ja": "沖縄"
+    },
+    {
+      "en": "Shibuya Sky",
+      "ja": "渋谷スカイ"
+    },
+    {
+      "en": "karaoke",
+      "ja": "カラオケ"
+    },
+    {
+      "en": "arcade",
+      "ja": "ゲームセンター"
+    },
+    {
+      "en": "rooftop",
+      "ja": "屋上"
+    },
+    {
+      "en": "conbini",
+      "ja": "コンビニ"
+    },
+    {
+      "en": "mall",
+      "ja": "ショッピングモール"
+    },
+    {
+      "en": "cafeteria",
+      "ja": "カフェテリア"
+    },
+    {
+      "en": "basement",
+      "ja": "地下室"
+    },
+    {
+      "en": "playground",
+      "ja": "遊び場"
+    },
+    {
+      "en": "schoolyard",
+      "ja": "校庭"
+    },
+    {
+      "en": "salon",
+      "ja": "サロン"
+    }
+  ],
+  "figure": [
+    {
+      "en": "detective",
+      "ja": "探偵"
+    },
+    {
+      "en": "wizard",
+      "ja": "魔法使い"
+    },
+    {
+      "en": "superhero",
+      "ja": "ヒーロー"
+    },
+    {
+      "en": "pirate",
+      "ja": "海賊"
+    },
+    {
+      "en": "king",
+      "ja": "王様"
+    },
+    {
+      "en": "queen",
+      "ja": "女王"
+    },
+    {
+      "en": "samurai",
+      "ja": "侍"
+    },
+    {
+      "en": "ninja",
+      "ja": "忍者"
+    },
+    {
+      "en": "teacher",
+      "ja": "先生"
+    },
+    {
+      "en": "doctor",
+      "ja": "医者"
+    },
+    {
+      "en": "astronaut",
+      "ja": "宇宙飛行士"
+    },
+    {
+      "en": "singer",
+      "ja": "歌手"
+    },
+    {
+      "en": "actor",
+      "ja": "俳優"
+    },
+    {
+      "en": "chef",
+      "ja": "シェフ"
+    },
+    {
+      "en": "clown",
+      "ja": "ピエロ"
+    },
+    {
+      "en": "giant",
+      "ja": "巨人"
+    },
+    {
+      "en": "robot",
+      "ja": "ロボット"
+    },
+    {
+      "en": "alien",
+      "ja": "エイリアン"
+    },
+    {
+      "en": "dragon",
+      "ja": "ドラゴン"
+    },
+    {
+      "en": "princess",
+      "ja": "お姫様"
+    },
+    {
+      "en": "Hercules",
+      "ja": "ヘラクレス"
+    },
+    {
+      "en": "Dracula",
+      "ja": "ドラキュラ"
+    },
+    {
+      "en": "Sherlock Holmes",
+      "ja": "シャーロック・ホームズ"
+    },
+    {
+      "en": "Cinderella",
+      "ja": "シンデレラ"
+    },
+    {
+      "en": "Santa Claus",
+      "ja": "サンタクロース"
+    },
+    {
+      "en": "Elon",
+      "ja": "イーロン・マスク"
+    },
+    {
+      "en": "Tesla",
+      "ja": "テスラ"
+    },
+    {
+      "en": "Trump",
+      "ja": "トランプ"
+    },
+    {
+      "en": "Moses",
+      "ja": "モーセ"
+    },
+    {
+      "en": "influencer",
+      "ja": "インフルエンサー"
+    },
+    {
+      "en": "streamer",
+      "ja": "配信者"
+    },
+    {
+      "en": "YouTuber",
+      "ja": "ユーチューバー"
+    },
+    {
+      "en": "vtuber",
+      "ja": "VTuber"
+    },
+    {
+      "en": "idol",
+      "ja": "アイドル"
+    },
+    {
+      "en": "otaku",
+      "ja": "オタク"
+    },
+    {
+      "en": "senpai",
+      "ja": "先輩"
+    },
+    {
+      "en": "gamer",
+      "ja": "ゲーマー"
+    },
+    {
+      "en": "cosplayer",
+      "ja": "コスプレイヤー"
+    },
+    {
+      "en": "barista",
+      "ja": "バリスタ"
+    },
+    {
+      "en": "dancer",
+      "ja": "ダンサー"
+    },
+    {
+      "en": "Zendaya",
+      "ja": "ゼンデイヤ"
+    },
+    {
+      "en": "Tom Holland",
+      "ja": "トム・ホランド"
+    },
+    {
+      "en": "Emma Stone",
+      "ja": "エマ・ストーン"
+    },
+    {
+      "en": "Ryan Gosling",
+      "ja": "ライアン・ゴズリング"
+    },
+    {
+      "en": "Harry Potter",
+      "ja": "ハリー・ポッター"
+    },
+    {
+      "en": "Britney Spears",
+      "ja": "ブリトニー・スピアーズ"
+    },
+    {
+      "en": "Backstreet Boys",
+      "ja": "バックストリート・ボーイズ"
+    },
+    {
+      "en": "Avril Lavigne",
+      "ja": "アヴリル・ラヴィーン"
+    },
+    {
+      "en": "Linkin Park",
+      "ja": "リンキン・パーク"
+    },
+    {
+      "en": "Mario Kart",
+      "ja": "マリオカート"
+    },
+    {
+      "en": "SpongeBob SquarePants",
+      "ja": "スポンジ・ボブ"
+    },
+    {
+      "en": "Ash Ketchum",
+      "ja": "サトシ"
+    },
+    {
+      "en": "Lara Croft",
+      "ja": "ララ・クロフト"
+    },
+    {
+      "en": "Barney",
+      "ja": "バーニー"
+    }
+  ],
+  "action": [
+    {
+      "en": "running",
+      "ja": "ランニング"
+    },
+    {
+      "en": "dancing",
+      "ja": "ダンス"
+    },
+    {
+      "en": "swimming",
+      "ja": "水泳"
+    },
+    {
+      "en": "reading",
+      "ja": "読書"
+    },
+    {
+      "en": "cooking",
+      "ja": "料理"
+    },
+    {
+      "en": "driving",
+      "ja": "運転"
+    },
+    {
+      "en": "flying",
+      "ja": "飛行"
+    },
+    {
+      "en": "jumping",
+      "ja": "ジャンプ"
+    },
+    {
+      "en": "singing",
+      "ja": "歌うこと"
+    },
+    {
+      "en": "drawing",
+      "ja": "お絵かき"
+    },
+    {
+      "en": "shopping",
+      "ja": "買い物"
+    },
+    {
+      "en": "sleeping",
+      "ja": "睡眠"
+    },
+    {
+      "en": "laughing",
+      "ja": "笑い"
+    },
+    {
+      "en": "studying",
+      "ja": "勉強"
+    },
+    {
+      "en": "climbing",
+      "ja": "クライミング"
+    },
+    {
+      "en": "hiding",
+      "ja": "かくれんぼ"
+    },
+    {
+      "en": "racing",
+      "ja": "レース"
+    },
+    {
+      "en": "fishing",
+      "ja": "釣り"
+    },
+    {
+      "en": "painting",
+      "ja": "絵画"
+    },
+    {
+      "en": "writing",
+      "ja": "執筆"
+    },
+    {
+      "en": "texting",
+      "ja": "メッセージ"
+    },
+    {
+      "en": "surfing",
+      "ja": "サーフィン"
+    },
+    {
+      "en": "camping",
+      "ja": "キャンプ"
+    },
+    {
+      "en": "waltz",
+      "ja": "ワルツ"
+    },
+    {
+      "en": "praying",
+      "ja": "お祈り"
+    },
+    {
+      "en": "whispering",
+      "ja": "ささやく"
+    },
+    {
+      "en": "traveling",
+      "ja": "旅行する"
+    },
+    {
+      "en": "streaming",
+      "ja": "配信する"
+    },
+    {
+      "en": "posting",
+      "ja": "投稿する"
+    },
+    {
+      "en": "scrolling",
+      "ja": "スクロールする"
+    },
+    {
+      "en": "swiping",
+      "ja": "スワイプする"
+    },
+    {
+      "en": "sharing",
+      "ja": "シェアする"
+    },
+    {
+      "en": "liking",
+      "ja": "いいねする"
+    },
+    {
+      "en": "commenting",
+      "ja": "コメントする"
+    },
+    {
+      "en": "binging",
+      "ja": "一気見する"
+    },
+    {
+      "en": "vlogging",
+      "ja": "Vログする"
+    },
+    {
+      "en": "editing",
+      "ja": "編集する"
+    },
+    {
+      "en": "chilling",
+      "ja": "チルする"
+    },
+    {
+      "en": "flexing",
+      "ja": "自慢する"
+    },
+    {
+      "en": "blogging",
+      "ja": "ブログを書く"
+    },
+    {
+      "en": "downloading",
+      "ja": "ダウンロードする"
+    },
+    {
+      "en": "raving",
+      "ja": "レイヴする"
+    },
+    {
+      "en": "skating",
+      "ja": "スケートする"
+    },
+    {
+      "en": "messaging",
+      "ja": "メッセージする"
+    }
+  ],
+  "abstract": [
+    {
+      "en": "freedom",
+      "ja": "自由"
+    },
+    {
+      "en": "luck",
+      "ja": "運"
+    },
+    {
+      "en": "silence",
+      "ja": "静けさ"
+    },
+    {
+      "en": "friendship",
+      "ja": "友情"
+    },
+    {
+      "en": "hope",
+      "ja": "希望"
+    },
+    {
+      "en": "memory",
+      "ja": "記憶"
+    },
+    {
+      "en": "secret",
+      "ja": "秘密"
+    },
+    {
+      "en": "dream",
+      "ja": "夢"
+    },
+    {
+      "en": "justice",
+      "ja": "正義"
+    },
+    {
+      "en": "chaos",
+      "ja": "混沌"
+    },
+    {
+      "en": "fear",
+      "ja": "恐怖"
+    },
+    {
+      "en": "love",
+      "ja": "愛"
+    },
+    {
+      "en": "patience",
+      "ja": "忍耐"
+    },
+    {
+      "en": "peace",
+      "ja": "平和"
+    },
+    {
+      "en": "surprise",
+      "ja": "驚き"
+    },
+    {
+      "en": "honesty",
+      "ja": "正直"
+    },
+    {
+      "en": "courage",
+      "ja": "勇気"
+    },
+    {
+      "en": "revenge",
+      "ja": "復讐"
+    },
+    {
+      "en": "pride",
+      "ja": "誇り"
+    },
+    {
+      "en": "future",
+      "ja": "未来"
+    },
+    {
+      "en": "past",
+      "ja": "過去"
+    },
+    {
+      "en": "danger",
+      "ja": "危険"
+    },
+    {
+      "en": "magic",
+      "ja": "魔法"
+    },
+    {
+      "en": "mystery",
+      "ja": "謎"
+    },
+    {
+      "en": "joy",
+      "ja": "喜び"
+    },
+    {
+      "en": "faith",
+      "ja": "信仰"
+    },
+    {
+      "en": "imagination",
+      "ja": "想像力"
+    },
+    {
+      "en": "vibes",
+      "ja": "雰囲気"
+    },
+    {
+      "en": "aesthetic",
+      "ja": "美学"
+    },
+    {
+      "en": "mood",
+      "ja": "ムード"
+    },
+    {
+      "en": "clout",
+      "ja": "影響力"
+    },
+    {
+      "en": "fomo",
+      "ja": "FOMO"
+    },
+    {
+      "en": "drama",
+      "ja": "ドラマ"
+    },
+    {
+      "en": "energy",
+      "ja": "エネルギー"
+    },
+    {
+      "en": "cringe",
+      "ja": "イタさ"
+    },
+    {
+      "en": "wholesome",
+      "ja": "ほっこり感"
+    },
+    {
+      "en": "lowkey",
+      "ja": "ひそかな気持ち"
+    },
+    {
+      "en": "highkey",
+      "ja": "本音"
+    },
+    {
+      "en": "nostalgia",
+      "ja": "ノスタルジア"
+    },
+    {
+      "en": "angst",
+      "ja": "不安"
+    },
+    {
+      "en": "hype",
+      "ja": "盛り上がり"
+    },
+    {
+      "en": "boredom",
+      "ja": "退屈"
+    },
+    {
+      "en": "childhood",
+      "ja": "子供時代"
+    }
+  ]
+}
