@@ -1719,8 +1719,8 @@
       "ja": "ハイタッチ"
     },
     {
-      "en": "jump roping",
-      "ja": "縄跳び"
+      "en": "hopping",
+      "ja": "片足跳び"
     },
     {
       "en": "skipping",
@@ -1763,8 +1763,8 @@
       "ja": "うなずく"
     },
     {
-      "en": "shaking hands",
-      "ja": "握手"
+      "en": "greeting",
+      "ja": "あいさつ"
     },
     {
       "en": "winking",
@@ -1791,32 +1791,32 @@
       "ja": "掃除機をかける"
     },
     {
-      "en": "washing dishes",
-      "ja": "皿を洗う"
+      "en": "cleaning",
+      "ja": "掃除"
     },
     {
-      "en": "folding laundry",
-      "ja": "洗濯物をたたむ"
+      "en": "ironing",
+      "ja": "アイロンがけ"
     },
     {
-      "en": "brushing teeth",
-      "ja": "歯を磨く"
+      "en": "brushing",
+      "ja": "ブラッシング"
     },
     {
-      "en": "washing hands",
-      "ja": "手を洗う"
+      "en": "rinsing",
+      "ja": "すすぐ"
     },
     {
-      "en": "taking a shower",
+      "en": "showering",
       "ja": "シャワーを浴びる"
     },
     {
-      "en": "combing hair",
+      "en": "combing",
       "ja": "髪をとかす"
     },
     {
-      "en": "tying shoes",
-      "ja": "靴ひもを結ぶ"
+      "en": "lacing",
+      "ja": "ひもを結ぶ"
     },
     {
       "en": "packing",
@@ -1827,11 +1827,11 @@
       "ja": "荷ほどきする"
     },
     {
-      "en": "wrapping a gift",
-      "ja": "プレゼントを包む"
+      "en": "wrapping",
+      "ja": "包む"
     },
     {
-      "en": "opening a present",
+      "en": "unboxing",
       "ja": "プレゼントを開ける"
     },
     {
@@ -1855,8 +1855,8 @@
       "ja": "植える"
     },
     {
-      "en": "watering plants",
-      "ja": "水をやる"
+      "en": "watering",
+      "ja": "水やり"
     },
     {
       "en": "rowing",
@@ -1883,24 +1883,24 @@
       "ja": "瞑想する"
     },
     {
-      "en": "playing chess",
-      "ja": "チェスをする"
+      "en": "strategizing",
+      "ja": "作戦を立てる"
     },
     {
-      "en": "playing cards",
-      "ja": "トランプをする"
+      "en": "shuffling",
+      "ja": "シャッフルする"
     },
     {
       "en": "assembling",
       "ja": "組み立てる"
     },
     {
-      "en": "building a sandcastle",
-      "ja": "砂の城を作る"
+      "en": "sculpting",
+      "ja": "彫刻する"
     },
     {
-      "en": "blowing bubbles",
-      "ja": "シャボン玉を吹く"
+      "en": "blowing",
+      "ja": "吹く"
     },
     {
       "en": "rollerblading",
@@ -1935,8 +1935,8 @@
       "ja": "ジャグリングする"
     },
     {
-      "en": "hula hooping",
-      "ja": "フラフープする"
+      "en": "twirling",
+      "ja": "くるくる回す"
     },
     {
       "en": "moonwalking",
@@ -1963,12 +1963,12 @@
       "ja": "敬礼する"
     },
     {
-      "en": "giving a thumbs-up",
-      "ja": "親指を立てる"
+      "en": "approving",
+      "ja": "賛成する"
     },
     {
-      "en": "blowing a kiss",
-      "ja": "投げキッスする"
+      "en": "kissing",
+      "ja": "キスする"
     },
     {
       "en": "toasting",
@@ -1987,8 +1987,8 @@
       "ja": "焼く"
     },
     {
-      "en": "toasting bread",
-      "ja": "パンを焼く"
+      "en": "browning",
+      "ja": "焼き色をつける"
     },
     {
       "en": "blending",
@@ -1999,12 +1999,12 @@
       "ja": "パズルをする"
     },
     {
-      "en": "making origami",
-      "ja": "折り紙を折る"
+      "en": "folding",
+      "ja": "折る"
     },
     {
-      "en": "snowball fighting",
-      "ja": "雪合戦する"
+      "en": "throwing",
+      "ja": "投げる"
     }
   ],
   "abstract": [
@@ -2441,8 +2441,8 @@
       "ja": "疲労"
     },
     {
-      "en": "comfort zone",
-      "ja": "コンフォートゾーン"
+      "en": "security",
+      "ja": "安全"
     },
     {
       "en": "connection",
@@ -2473,7 +2473,7 @@
       "ja": "達成感"
     },
     {
-      "en": "peace of mind",
+      "en": "assurance",
       "ja": "安心"
     },
     {
@@ -2481,11 +2481,11 @@
       "ja": "ひらめき"
     },
     {
-      "en": "confidence boost",
-      "ja": "自信がつく"
+      "en": "encouragement",
+      "ja": "励まし"
     },
     {
-      "en": "good luck",
+      "en": "fortune",
       "ja": "幸運"
     },
     {
@@ -2501,8 +2501,8 @@
       "ja": "懐かしさ"
     },
     {
-      "en": "fair play",
-      "ja": "フェアプレー"
+      "en": "sportsmanship",
+      "ja": "スポーツマンシップ"
     },
     {
       "en": "complexity",

@@ -2,6 +2,12 @@ const fs = require("fs");
 
 const filePath = process.argv[2] || "word-bank.json";
 const categories = ["object", "place", "figure", "action", "abstract"];
+const noSpacesCategories = new Set(
+  (process.argv[3] || "")
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+);
 
 function fail(message) {
   console.error(`ERROR: ${message}`);
@@ -29,6 +35,9 @@ for (const key of categories) {
 
     if (!en) fail(`${filePath}: ${key}[${i}].en is missing`);
     if (!ja) fail(`${filePath}: ${key}[${i}].ja is missing`);
+    if (noSpacesCategories.has(key) && /\\s/.test(en)) {
+      fail(`${filePath}: ${key}[${i}].en contains spaces: "${en}"`);
+    }
 
     const norm = en.toLowerCase();
     if (seen.has(norm)) {
